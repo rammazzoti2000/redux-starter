@@ -1,7 +1,7 @@
 // []
 let lastId = 0;
 
-function reducer(state = [], action) {
+export default function reducer(state = [], action) {
     switch (action.type) {
         case 'bugAdded':
             return [
@@ -12,6 +12,7 @@ function reducer(state = [], action) {
                     resolved: false,
                 }
             ];
+
         case 'bugRemoved':
             return state.filter(bug => Buffer.id !== action.payload.id);
         
